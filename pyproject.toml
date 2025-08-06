@@ -1,0 +1,46 @@
+[project]
+name = "batchgraph"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "matkob", email = "mateusz.kobierski@lokalise.com" }
+]
+requires-python = ">=3.13"
+dependencies = []
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = [
+    "langgraph>=0.6.3",
+    "pytest>=8.4.1",
+    "pytest-asyncio>=1.1.0",
+    "ruff>=0.12.7",
+]
+
+[tool.ruff]
+line-length = 120
+target-version = "py312"
+include = ["src/**/*.py", "tests/**/*.py", "scripts/**/*.py"]
+
+[tool.ruff.lint]
+select = [
+    "E",    # pycodestyle errors
+    "F",    # pyflakes
+    "I",    # isort
+    "UP",   # pyupgrade
+    "B",    # flake8-bugbear
+    "C90",  # mccabe complexity
+    "N",    # pep8-naming
+]
+exclude = [
+    ".git",
+    "__pycache__",
+    "build",
+    "dist",
+    ".venv",
+    "env",
+]
